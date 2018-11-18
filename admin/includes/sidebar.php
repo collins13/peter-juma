@@ -8,7 +8,7 @@
   </li>
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="fa fa-folder" aria-hidden="true"></i>
+<i class="fa fa-folder" aria-hidden="true"></i>
       <span>Pages</span>
     </a>
     <div class="dropdown-menu" aria-labelledby="pagesDropdown">
@@ -33,23 +33,23 @@
       <span>Tables</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="add-recipe.php">
       <i class="fa fa-table" aria-hidden="true"></i>
       <span>Add New Recipe</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="video.php">
   <i class="fa fa-video-camera"></i>
       <span>Add New Video</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="category.php">
     <i class="fa fa-table" aria-hidden="true"></i>
-      <span>Add New Category</span></a>
+      <span>Add Recipe Category</span></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="tables.html">
+    <a class="nav-link" href="cauricel.php">
     <i class="fa fa-file-image-o" aria-hidden="true"></i>
-      <span>Add Cauricel image</span></a>
+      <span>Add Cauricel images</span></a>
   </li>
 </ul>

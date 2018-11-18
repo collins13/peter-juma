@@ -30,9 +30,23 @@ body {
 .card-img-top{
   height: 200px;
 }
+
 .navbar {
     color: #FFFFFF;
     background-color: #CC3333;
+}
+.navbar-nav  .nav-item .nav-link {
+  margin-left: 0.75rem;
+  font-weight: 400;
+  font-size: 20px;
+  color: #f1f1f1;
+
+}
+.navbar-brand .active{
+  margin-left: 0.75rem;
+  font-weight: 400;
+  font-size: 20px;
+  color: #f1f1f1;;
 }
 
 /* OR*/
@@ -40,4 +54,14 @@ body {
 .nav {
     color: red !important;
     background-color: red;
+}
+video{
+  width: 100%;
+  height: 300px;
+}
+.bg-modal{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.7; 
 }

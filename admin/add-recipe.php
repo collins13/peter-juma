@@ -1,9 +1,16 @@
 <!DOCTYPE html>
+<?php include 'scripts/add-post.php'; ?>
 <?php include 'includes/header.php'; ?>
 <style media="screen">
 .ck-editor__editable {
   min-height: 300px;
 }
+.error{
+  color: red;
+  font-weight:bold;
+  font-size: 15px;
+}
+
 </style>
     <div id="wrapper">
 
@@ -31,32 +38,34 @@
                 </div>
                 <div class="card-body">
 
-                  <form action="" method="POST" enctype="multipart/form-data">
+                  <form action="add-recipe.php" method="POST" enctype="multipart/form-data">
                     <div class="row">
                     <div class="form-group col-md-6">
                       <label for="title">Recipe Tiitle:</label>
-                      <input type="text" class="form-control" name="title" id="title" aria-describedby="titleHelp" placeholder="Enter title">
+                      <span class="error"><?=$titile_error;?></span>
+                      <input type="text" class="form-control" name="title" id="title" required="required" value="<?=$title;?>" aria-describedby="titleHelp" placeholder="Enter title">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="title">image1:</label>
-                      <input type="file" class="form-control" name="image1" id="image1" aria-describedby="titleHelp" placeholder="Enter image1">
+                      <input type="file" class="form-control" name="image1" id="image1" required="required" aria-describedby="titleHelp" placeholder="Enter image1">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="title">image2:</label>
-                      <input type="file" class="form-control" name="image2" id="image2" aria-describedby="titleHelp" placeholder="Enter image1">
+                      <input type="file" class="form-control" name="image2" id="image2" required="required" aria-describedby="titleHelp" placeholder="Enter image1">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="title">image3:</label>
-                      <input type="file" class="form-control" name="image2" id="image3" aria-describedby="titleHelp" placeholder="Enter image1">
+                      <input type="file" class="form-control" name="image3" id="image3" required="required" aria-describedby="titleHelp" placeholder="Enter image1">
                     </div>
                     <div class="form-group col-md-6">
                       <label for="title">video:</label>
-                      <input type="file" class="form-control" name="image4" id="image4" aria-describedby="titleHelp" placeholder="Enter image1">
+                      <input type="file" class="form-control" name="image4" id="image4" required="required" aria-describedby="titleHelp" placeholder="Enter image1">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="content">Method:</label>
-                  <textarea name="content" class="form-control" id="content"></textarea>
+                    <label for="content">Method*:</label>
+                <span class="error"><?=$titile_error;?></span>
+                  <textarea name="content" class="form-control" id="content"><?=$content?></textarea>
                   <script>
                   ClassicEditor
                       .create( document.querySelector( '#content' ) )
