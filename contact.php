@@ -14,7 +14,7 @@ $message = ((isset($_POST['message']))?$_POST['message']:'');
   if (empty($name)) {
     $name_error ='name fild is required';
   }
-  if (empty($phonr)) {
+  if (empty($phone)) {
     $phone_error ='name fild is required';
   }
   if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -75,24 +75,33 @@ header("Location:contact.php");
           <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="images/contact-us_orig.png"></iframe>
         </div>
         <!-- Contact Details Column -->
+
         <div class="col-lg-4 mb-4">
-          <h3>Contact Details</h3>
-          <p>
-            3481 Saint Lucia
-            <br>Beverly Hills, CA 90210
-            <br>
-          </p>
-          <p>
-            <abbr title="Phone">Phone</abbr>: +(175) 87135203
-          </p>
-          <p>
-            <abbr title="Email">Email</abbr>:
-            <a href="peterjuma@hotmail.com">peterjuma@hotmail.com
-            </a>
-          </p>
-          <p>
-            <abbr title="Hours">Hours</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
-          </p>
+<div class="card">
+  <div class="card-header bg-success">
+    Contact us
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Contact Details</h5>
+              <p>
+                3481 Saint Lucia
+                <br>Beverly Hills, CA 90210
+                <br>
+              </p>
+              <p>
+                <abbr title="Phone">Phone</abbr>: +(175) 87135203
+              </p>
+              <p>
+                <abbr title="Email">Email</abbr>:
+                <a href="peterjuma@hotmail.com">peterjuma@hotmail.com
+                </a>
+              </p>
+              <p>
+                <abbr title="Hours">Hours</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+              </p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
         </div>
       </div>
       <!-- /.row -->
@@ -101,41 +110,48 @@ header("Location:contact.php");
       <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
       <div class="row">
         <div class="col-lg-8 mb-4">
-          <h3>Send us a Message</h3>
-          <form name="sentMessage" id="contactForm" method="POST" action="contact.php" novalidate>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Full Name:</label>
-                <span class="error">  <?=$name_error;?></span>
-                <input type="text" class="form-control" name="name" id="name" value="<?=$name;?>" required data-validation-required-message="Please enter your name.">
-                <p class="help-block"></p>
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Phone Number:</label>
-                  <span class="error"><?=$phone_error;?></span>
-                <input type="tel" class="form-control" name="phone" id="phone" value="<?=$phone?>" required data-validation-required-message="Please enter your phone number.">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Email Address:</label>
-                <input type="email" class="form-control" name="email" id="email" value="<?=$email?>" required data-validation-required-message="Please enter your email address.">
-              </div>
-            </div>
-            <div class="control-group form-group">
-              <div class="controls">
-                <label>Message:</label>
-                  <span class="error"><?=$message_error;?></span>
-                <textarea rows="10" cols="100" class="form-control" name="message" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none">
-                </textarea>
-              </div>
-            </div>
-            <div id="success"></div>
-            <!-- For success/fail messages -->
-            <button type="submit" class="btn btn-outline-primary" id="sendMessageButton">Send Message</button>
-          </form>
+<div class="card">
+  <div class="card-header bg-success">
+    Contact form
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Send us a Message</h3>
+    <form name="sentMessage" id="contactForm" method="POST" action="contact.php" novalidate>
+      <div class="control-group form-group">
+        <div class="controls">
+          <label>Full Name:</label>
+          <span class="error">  <?=$name_error;?></span>
+          <input type="text" class="form-control" name="name" id="name" value="<?=$name;?>" required data-validation-required-message="Please enter your name.">
+          <p class="help-block"></p>
+        </div>
+      </div>
+      <div class="control-group form-group">
+        <div class="controls">
+          <label>Phone Number:</label>
+            <span class="error"><?=$phone_error;?></span>
+          <input type="tel" class="form-control" name="phone" id="phone" value="<?=$phone?>" required data-validation-required-message="Please enter your phone number.">
+        </div>
+      </div>
+      <div class="control-group form-group">
+        <div class="controls">
+          <label>Email Address:</label>
+          <input type="email" class="form-control" name="email" id="email" value="<?=$email?>" required data-validation-required-message="Please enter your email address.">
+        </div>
+      </div>
+      <div class="control-group form-group">
+        <div class="controls">
+          <label>Message:</label>
+            <span class="error"><?=$message_error;?></span>
+          <textarea rows="10" cols="100" class="form-control" name="message" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none">
+          </textarea>
+        </div>
+      </div>
+      <div id="success"></div>
+      <!-- For success/fail messages -->
+      <button type="submit" class="btn btn-outline-primary" id="sendMessageButton">Send Message</button>
+    </form>
+  </div>
+</div>
         </div>
 
       </div>

@@ -26,15 +26,15 @@
             <li class="breadcrumb-item">
               <a href="#">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Overview</li>
+            <li class="breadcrumb-item active">Recipe</li>
           </ol>
 
 
           <!-- DataTables -->
           <?php if (isset($_GET['add'])): ?>
-          <div class="card text-center">
-                <div class="card-header">
-                  Featured
+          <div class="card">
+                <div class="card-header" style="background:green; color:white;">
+                  Add Your new recipe here
                 </div>
                 <div class="card-body">
 
@@ -63,7 +63,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="content">Method*:</label>
+                    <label for="content">Procedure(Method)*:</label>
                 <span class="error"><?=$titile_error;?></span>
                   <textarea name="content" class="form-control" id="content"><?=$content?></textarea>
                   <script>
@@ -98,69 +98,44 @@
               Data Table Example</div>
             <div class="card-body">
               <div class="table-responsive">
+                <?php
+                $sql = $conn->query("SELECT * FROM recipes WHERE archive = 0");
+                if (isset($_GET['delete'])) {
+                  $delete_id = $_GET['delete'];
+                  $detele = $conn->query("UPDATE recipes SET archive = 1 WHERE id ='$delete_id'");
+                }
+
+                ?>
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
+                      <th>#</th>
+                      <th>Title</th>
+                      <th>image</th>
+                      <th>Category</th>
+                      <th>Ratings</th>
+                      <th>Action1</th>
+                      <th>Action2</th>
                     </tr>
                   </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
-                    </tr>
-                  </tfoot>
                   <tbody>
+                      <?php while($detail = mysqli_fetch_assoc($sql)) : ?>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
+                      <td><?=$detail['id'];?></td>
+                      <td><?=$detail['title'];?></td>
+                      <td>
+                        <img src="../images/<?=$detail['image1'];?>" alt="image1"
+                        class="img img-responsive"
+                        style="width:20%">
+                      </td>
+                      <td><?=$detail['category'];?></td>
+                      <td><?=$detail['ratings'];?></td>
+                      <td>
+                        <a href="add-recipe.php?delete=<?=$detail['id']?>" class="btn btn-danger btn-sm">Delete</a>
+                      </td>
+                      <td><a href="add-recipe.php?edit=<?=$detail['id']?>" class="btn btn-warning btn-sm">Edit</a></td>
                     </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>63</td>
-                      <td>2011/07/25</td>
-                      <td>$170,750</td>
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>San Francisco</td>
-                      <td>66</td>
-                      <td>2009/01/12</td>
-                      <td>$86,000</td>
-                    </tr>
-                    <tr>
-                      <td>Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>22</td>
-                      <td>2012/03/29</td>
-                      <td>$433,060</td>
-                    </tr>
-                    <tr>
-                      <td>Airi Satou</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>33</td>
-                      <td>2008/11/28</td>
-                      <td>$162,700</td>
-                    </tr>
-
+                          <?php endwhile; ?>
                   </tbody>
                 </table>
               </div>

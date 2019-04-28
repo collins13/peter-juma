@@ -1,6 +1,6 @@
 <ul class="sidebar navbar-nav">
   <li class="nav-item active">
-    <a class="nav-link" href="index.html">
+    <a class="nav-link" href="index.php">
       <i class="fa fa-tachometer" aria-hidden="true"></i>
 
       <span>Dashboard</span>
@@ -51,5 +51,20 @@
     <a class="nav-link" href="cauricel.php">
     <i class="fa fa-file-image-o" aria-hidden="true"></i>
       <span>Add Cauricel images</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="newslatter.php">
+    <i class="fa fa-file-image-o" aria-hidden="true"></i>
+      <span>Newsletter</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="news-list.php">
+    <i class="fa fa-file-image-o" aria-hidden="true"></i>
+      <span>Send Newslatter</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="archive.php">
+    <i class="fa fa-archive" aria-hidden="true"></i>
+      <span>Archive</span></a>
   </li>
 </ul>

@@ -12,7 +12,17 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
       Launch demo modal
     </button>-->
+    <div class="article">
+<h3 class="text-center">This is article:  <?=$detailsrow['title']?></h3><hr>
+<div class="article-rate">
+ <h2>Rate this Article:</h2>
+ <?php foreach (range(1, 5) as $rating): ?>
+   <a href="rate.php?article=<?=$detailsrow['id']?>&rating=<?=$rating;?>"><i class="fa fa-star fa-2x"><?=$rating;?></i></a>
 
+ <?php endforeach; ?>
+
+</div>
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
       <div class="modal-dialog" role="document">
